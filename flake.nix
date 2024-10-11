@@ -10,8 +10,8 @@
     # nixvim.url = "github:nix-community/nixvim";
     # nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    xremap-flake.url = "github:xremap/nix-flake";
-    xremap-flake.inputs.nixpkgs.follows = "nixpkgs";
+    # xremap-flake.url = "github:xremap/nix-flake";
+    # xremap-flake.inputs.nixpkgs.follows = "nixpkgs";
 
     nvim-pkg.url = "path:./modules/kickstart-nix.nvim";
     nvim-pkg.inputs.nixpkgs.follows = "nixpkgs";
@@ -32,14 +32,14 @@
           home-manager.users.isaac = import ./home-manager/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
 
-          services.xremap.withX11 = true;
-          services.xremap.config.modmap = [{
-            name = "Global";
-            remap = { "CapsLock" = "Shift_L"; };
-          }];
-          nixpkgs.overlays = [
-            nvim-pkg.overlays.default
-         ];
+         #  services.xremap.withX11 = true;
+         #  services.xremap.config.modmap = [{
+         #    name = "Global";
+         #    remap = { "CapsLock" = "Shift_L"; };
+         #  }];
+         #  nixpkgs.overlays = [
+         #    nvim-pkg.overlays.default
+         # ];
         }
       ];
     };
